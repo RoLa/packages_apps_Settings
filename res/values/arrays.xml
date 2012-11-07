@@ -902,4 +902,38 @@
     <string-array name="location_values_gps_source" translatable="false">
         <item>0</item>
     </string-array>
+
+    <!--Title for Custom Lockscreen-->
+    <string-array name="unlock_custom_entries">
+ 	<item>Optimus 4X</item>
+	<!--<item>Other</item>
+	<item>Another Other</item>
+        <item>BMc, brother from another mother</item>-->
+    </string-array>
+
+    <string-array name="unlock_custom_values">
+        <item>0</item>
+        <!--<item>1</item>
+	<item>2</item>
+	<item>3</item>-->
+    </string-array>
+
+    <!--Title for 4X ring color options-->
+    <string-array name="4X_color_choice_entries">
+        <item>Stock (White)</item>
+        <item>Holo Blue</item>
+	<item>Holo Purple</item>
+	<item>Holo Green</item>
+	<item>Holo Orange</item>
+	<item>Holo Red</item>
+    </string-array>
+
+    <string-array name="4X_color_choice_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
 </resources>

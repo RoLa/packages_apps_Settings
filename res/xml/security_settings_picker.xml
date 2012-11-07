@@ -46,4 +46,9 @@
             android:title="@string/unlock_set_unlock_password_title"
             android:persistent="false"/>
 
+    <PreferenceScreen
+            android:key="unlock_set_custom"
+            android:title="@string/unlock_set_unlock_custom_title"
+            android:persistent="false"/>
+
 </PreferenceScreen>

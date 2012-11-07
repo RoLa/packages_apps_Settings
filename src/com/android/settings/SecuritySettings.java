@@ -70,7 +70,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String KEY_RESET_CREDENTIALS = "reset_credentials";
     private static final String KEY_TOGGLE_INSTALL_APPLICATIONS = "toggle_install_applications";
     private static final String KEY_POWER_INSTANTLY_LOCKS = "power_button_instantly_locks";
-
+    private static final String KEY_CUSTOM_LOCKSCREEN_BG_COLOR = "custom_bg_color";
     DevicePolicyManager mDPM;
 
     private ChooseLockSettingsHelper mChooseLockSettingsHelper;
@@ -81,7 +81,8 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private CheckBoxPreference mVisiblePattern;
     private CheckBoxPreference mTactileFeedback;
 
-    private CheckBoxPreference mShowPassword;
+    private ColorPickerPreference mCustomLockscreenBgColor;
+    private Preference  mCustomLockscreen
 
     private Preference mResetCredentials;
 
@@ -113,6 +114,10 @@ public class SecuritySettings extends SettingsPreferenceFragment
         if (!mLockPatternUtils.isSecure()) {
             if (mLockPatternUtils.isLockScreenDisabled()) {
                 resid = R.xml.security_settings_lockscreen;
+            } else { if (mLockPatternUtils.using//somethinghere() &&
+                      mLockPatternUtils.is//thesamesomething()) {
+                resid = R.xml.security_settings_custom;
+            }
             } else {
                 resid = R.xml.security_settings_chooser;
             }
@@ -171,6 +176,12 @@ public class SecuritySettings extends SettingsPreferenceFragment
         // lock instantly on power key press
         mPowerButtonInstantlyLocks = (CheckBoxPreference) root.findPreference(
                 KEY_POWER_INSTANTLY_LOCKS);
+
+        // Pick custom lock style
+        mCustomLockscreen = (Preference) findPreference(KEY_UNLOCK_SET_CUSTOM); 
+
+        // Use Background color picker here too maybe?
+        mCustomLockscreenBgColor = (CheckBoxPreference) root.findPreference(KEY_CUSTOM_LOCKSCREEN_BG_COLOR);          
 
         // don't display visible pattern if biometric and backup is not pattern
         if (resid == R.xml.security_settings_biometric_weak &&
